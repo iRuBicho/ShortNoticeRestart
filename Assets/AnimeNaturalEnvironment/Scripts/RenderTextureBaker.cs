@@ -2,11 +2,9 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-using RenderPipeline = UnityEngine.Rendering.RenderPipelineManager;
 [ExecuteInEditMode]
 public class RenderTextureBaker : MonoBehaviour
 {
-    
     [Tooltip("Orthographic Camera")]
     public Camera camToDrawWith;
     // layer to render
@@ -14,11 +12,9 @@ public class RenderTextureBaker : MonoBehaviour
     LayerMask layer;
     // objects to render
     [Tooltip("Used to determine the camera's size depending on the mesh's dimensions ")]
-
     [SerializeField]
     Renderer[] renderers;
     // unity terrain to render
-    
     [SerializeField]
     Terrain[] terrains;
     // map resolution
@@ -30,10 +26,8 @@ public class RenderTextureBaker : MonoBehaviour
     RenderTexture tempTex;
 
     private Bounds bounds;
-    // resolution of the map
 
     // Start is called before the first frame update
-
     public void GetBounds()
     {
         bounds = new Bounds(transform.position, Vector3.zero);
@@ -53,16 +47,15 @@ public class RenderTextureBaker : MonoBehaviour
             }
         }
     }
+
     public void ReDrawDiffuseMap()
     {
         tempTex = new RenderTexture(resolution, resolution, 24);
         DrawDiffuseMap();
     }
 
-
-
     void Start()
-    {     
+    {
         ReDrawDiffuseMap();
     }
 
@@ -81,19 +74,25 @@ public class RenderTextureBaker : MonoBehaviour
         camToDrawWith.targetTexture = tempTex;
         Shader.SetGlobalTexture("TB_DEPTH", tempTex);
     }
+
     public void DrawDiffuseMap()
     {
         DrawToMap("TB_DEPTH");
     }
+
     private void OnDestroy()
     {
-        RenderPipeline.beginCameraRendering -= UpdateCamera;
+        RenderPipelineManager.beginCameraRendering -= UpdateCamera;
     }
 
     void UpdateCamera(ScriptableRenderContext SRC, Camera camera)
     {
-       // Unity reverted the obsolete status and RenderSingleCamera will soon be usable again while they are looking for a better solution.
-        UniversalRenderPipeline.RenderSingleCamera(SRC, camToDrawWith);
+        // Only render the specific camera we care about
+        if (camera == camToDrawWith)
+        {
+            // Directly render the camera to the target texture
+            camToDrawWith.Render();
+        }
     }
 
     void DrawToMap(string target)
@@ -102,32 +101,32 @@ public class RenderTextureBaker : MonoBehaviour
         camToDrawWith.targetTexture = tempTex;
         camToDrawWith.depthTextureMode = DepthTextureMode.Depth;
 
-        //the total width of the bounding box of our cameras view
+        // the total width of the bounding box of our camera's view
         Shader.SetGlobalFloat("TB_SCALE", GetComponent<Camera>().orthographicSize * 2);
-        //find the bottom corner of the texture in world scale by subtracting the size of the camera from its x and z position
+        // find the bottom corner of the texture in world scale by subtracting the size of the camera from its x and z position
         Shader.SetGlobalFloat("TB_OFFSET_X", camToDrawWith.transform.position.x - camToDrawWith.orthographicSize);
         Shader.SetGlobalFloat("TB_OFFSET_Z", camToDrawWith.transform.position.z - camToDrawWith.orthographicSize);
-        //we'll also need the relative y position of the camera, lets get this by subtracting the far clip plane from the camera y position
+        // we'll also need the relative y position of the camera, lets get this by subtracting the far clip plane from the camera y position
         Shader.SetGlobalFloat("TB_OFFSET_Y", camToDrawWith.transform.position.y - camToDrawWith.farClipPlane);
-        //we'll also need the far clip plane itself to know the range of y values in the depth texture
+        // we'll also need the far clip plane itself to know the range of y values in the depth texture
         Shader.SetGlobalFloat("TB_FARCLIP", camToDrawWith.farClipPlane);
 
-        //camToDrawWith.Render();
-        RenderPipeline.beginCameraRendering += UpdateCamera; ;
+        // Add the camera rendering callback to ensure it's updated
+        RenderPipelineManager.beginCameraRendering += UpdateCamera;
 
         Shader.SetGlobalTexture(target, tempTex);
         camToDrawWith.enabled = false;
     }
+
     float CalculateOrthographicSize()
     {
-        //return bounds.size.magnitude;
         var orthographicSize = camToDrawWith.orthographicSize;
 
         Vector2 min = bounds.min;
         Vector2 max = bounds.max;
 
-        var width = (max - min).x ;
-        var height = (max - min).y ;
+        var width = (max - min).x;
+        var height = (max - min).y;
 
         if (width > height)
         {
@@ -140,6 +139,7 @@ public class RenderTextureBaker : MonoBehaviour
 
         return Mathf.Max(orthographicSize, 1f);
     }
+
     public void SetUpCam()
     {
         transform.position = Vector3.zero;
@@ -149,7 +149,7 @@ public class RenderTextureBaker : MonoBehaviour
         {
             camToDrawWith = GetComponentInChildren<Camera>();
         }
-       
+
         camToDrawWith.cullingMask = layer;
         camToDrawWith.orthographicSize = CalculateOrthographicSize();
         camToDrawWith.transform.parent = null;
@@ -157,5 +157,4 @@ public class RenderTextureBaker : MonoBehaviour
         camToDrawWith.transform.parent = gameObject.transform;
         camToDrawWith.enabled = false;
     }
-
 }
