@@ -10395,7 +10395,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 15
+      scalar: 2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -16623,10 +16623,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 800809860}
-  walkSpeed: 6
-  runSpeed: 12
-  jumpPower: 7
-  gravity: 10
+  walkSpeed: 4
+  runSpeed: 8
+  jumpPower: 5
+  gravity: 8
   lookSpeed: 2
   lookXLimit: 45
   canMove: 1
@@ -16668,7 +16668,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -35464,7 +35464,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       blend: 1
-      speed: 1.5
+      speed: 1
       mode: 0
     - _featherStart: 0.2809999883174896
       _featherEnd: 0.34599998593330383
