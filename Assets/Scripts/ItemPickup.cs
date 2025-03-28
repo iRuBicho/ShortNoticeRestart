@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUpBlock : MonoBehaviour
+public class ItemPickup : MonoBehaviour
 {
     public GameObject pickUpText;
     public GameObject BlockOnPlayer;
+    public Sprite itemSprite;
+
+    private Inventory inventory;
+    private ItemManager itemManager;
 
     void Start()
     {
         pickUpText.SetActive(false);
+        inventory = GameObject.Find("HUD").GetComponent<Inventory>();
+        itemManager = GameObject.Find("ItemManager").GetComponent<ItemManager>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -18,12 +24,16 @@ public class PickUpBlock : MonoBehaviour
         {
             pickUpText.SetActive(true);
 
-            // Check if 'E' key is held down to pick up the Block
             if (Input.GetKey(KeyCode.E))
             {
+                Debug.Log("Picked up item: " + itemSprite.name);
+
                 gameObject.SetActive(false);
-                BlockOnPlayer.SetActive(true);
                 pickUpText.SetActive(false);
+                inventory.AddItemToInventory(itemSprite);
+
+                // Add item to ItemManager
+                itemManager.AddItem(BlockOnPlayer);
             }
         }
     }
