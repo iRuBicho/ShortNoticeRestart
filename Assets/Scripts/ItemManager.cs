@@ -32,13 +32,6 @@ public class ItemManager : MonoBehaviour
         collectedItems[currentIndex].SetActive(true);
     }
 
-    public void RemoveItem(GameObject item)
-    {
-        if (item == null) return;
-
-        collectedItems.Remove(item);
-    }
-
     private void SwitchNextItem()
     {
         if (collectedItems.Count == 0) return;
@@ -55,6 +48,15 @@ public class ItemManager : MonoBehaviour
         collectedItems[currentIndex].SetActive(false);
         currentIndex = (currentIndex - 1 + collectedItems.Count) % collectedItems.Count;
         collectedItems[currentIndex].SetActive(true);
+    }
+
+    public void RemoveItem(GameObject item)
+    {
+        if (collectedItems.Contains(item))
+        {
+            collectedItems.Remove(item);
+            Destroy(item); // Optionally destroy the item or just disable it
+        }
     }
 }
 
