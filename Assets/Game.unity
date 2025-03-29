@@ -16744,7 +16744,7 @@ Transform:
   m_GameObject: {fileID: 578722326}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.26, y: 18.77, z: 2.5}
+  m_LocalPosition: {x: 2.26, y: 18.59, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17403,7 +17403,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -17436,7 +17436,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -34194,6 +34194,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Intensity
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689732806685220687, guid: 3a162d9b3eabf5541aeafc613988e630,
+        type: 3}
+      propertyPath: m_Range
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689732806685220687, guid: 3a162d9b3eabf5541aeafc613988e630,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689732806685220687, guid: 3a162d9b3eabf5541aeafc613988e630,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4689732806685220687, guid: 3a162d9b3eabf5541aeafc613988e630,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5154010266989119465, guid: 3a162d9b3eabf5541aeafc613988e630,
         type: 3}
