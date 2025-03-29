@@ -23,15 +23,20 @@ public class ItemManager : MonoBehaviour
 
         collectedItems.Add(item);
 
-        // Deactivate all items
         foreach (GameObject obj in collectedItems)
         {
             obj.SetActive(false);
         }
 
-        // Set current index to last picked
         currentIndex = collectedItems.Count - 1;
         collectedItems[currentIndex].SetActive(true);
+    }
+
+    public void RemoveItem(GameObject item)
+    {
+        if (item == null) return;
+
+        collectedItems.Remove(item);
     }
 
     private void SwitchNextItem()
@@ -52,3 +57,4 @@ public class ItemManager : MonoBehaviour
         collectedItems[currentIndex].SetActive(true);
     }
 }
+
