@@ -28,42 +28,14 @@ public class QuestInteraction : MonoBehaviour
         return hasItem1 && hasItem2;
     }
 
-    public void CompleteQuest()
-    {
-        if (!HasRequiredItems())
-        {
-            Debug.Log("Player does not have the required items.");
-            return;
-        }
-
-        Debug.Log("Quest completed. Items given to Lumia."); 
-        isQuestCompleted = true;
-
-        RemoveItemsFromInventory();
-        StopLightFlicker();
-    }
-
     public void RemoveItemsFromInventory()
     {
-        List<GameObject> itemsToRemove = new List<GameObject>();
-
         foreach (GameObject item in itemManager.collectedItems)
         {
             if (item.CompareTag(item1Tag) || item.CompareTag(item2Tag))
             {
-                itemsToRemove.Add(item);
-            }
-        }
-
-        if (itemsToRemove.Count > 0)
-        {
-            foreach (GameObject item in itemsToRemove)
-            {
                 itemManager.RemoveItem(item);
             }
-
-            Debug.Log("All required items removed.");
-            itemManager.UpdateCurrentItemAfterRemoval();
         }
     }
 
@@ -72,7 +44,6 @@ public class QuestInteraction : MonoBehaviour
         if (streetLamp != null)
         {
             streetLamp.intensity = 1f;
-            Debug.Log("Street lamp flickering stopped."); 
         }
     }
 }

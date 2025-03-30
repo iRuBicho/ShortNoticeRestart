@@ -22,8 +22,14 @@ public class ItemManager : MonoBehaviour
         if (item == null) return;
 
         collectedItems.Add(item);
-        item.SetActive(true);
+
+        foreach (GameObject obj in collectedItems)
+        {
+            obj.SetActive(false);
+        }
+
         currentIndex = collectedItems.Count - 1;
+        collectedItems[currentIndex].SetActive(true);
     }
 
     private void SwitchNextItem()
@@ -49,39 +55,8 @@ public class ItemManager : MonoBehaviour
         if (collectedItems.Contains(item))
         {
             collectedItems.Remove(item);
-            Destroy(item); 
-            Debug.Log("Removed item: " + item.name);
+            Destroy(item); // Optionally destroy the item or just disable it
         }
-        else
-        {
-            Debug.Log("Item not found in inventory: " + item.name);
-        }
-    }
-    public void UpdateCurrentItemAfterRemoval()
-    {
-        if (collectedItems.Count == 0)
-        {
-            currentIndex = -1;
-            return;
-        }
-
-        if (currentIndex >= collectedItems.Count)
-        {
-            currentIndex = collectedItems.Count - 1;
-        }
-
-        foreach (GameObject obj in collectedItems)
-        {
-            obj.SetActive(false);
-        }
-
-        collectedItems[currentIndex].SetActive(true);
-    }
-
-
-    public GameObject GetCurrentItem()
-    {
-        if (collectedItems.Count == 0) return null;
-        return collectedItems[currentIndex];
     }
 }
+

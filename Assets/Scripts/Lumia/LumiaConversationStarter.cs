@@ -29,11 +29,14 @@ public class LumiaConversationStarter : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     public void OnSelectHaveItem()
     {
         Debug.Log("Player selected: I have the items.");
     }
 
+=======
+>>>>>>> parent of 940e821 (UI Dialogue)
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
