@@ -15764,8 +15764,6 @@ MonoBehaviour:
   cameraController: {fileID: 578722328}
   questInteraction: {fileID: 0}
   lumiaConversationStarter: {fileID: 0}
-  lumiaCollider: {fileID: 1228966656}
-  dialogueCanvas: {fileID: 571074391}
 --- !u!4 &443407379
 Transform:
   m_ObjectHideFlags: 0
@@ -23693,6 +23691,7 @@ GameObject:
   - component: {fileID: 921876148}
   - component: {fileID: 921876147}
   - component: {fileID: 921876149}
+  - component: {fileID: 921876150}
   m_Layer: 0
   m_Name: ConversationEventInfo
   m_TagString: Untagged
@@ -23752,6 +23751,25 @@ MonoBehaviour:
   NodeID: 3
   TMPFont: {fileID: 0}
   Icon: {fileID: 21300000, guid: e24a8bee624a1b04681cd71c55805c1d, type: 3}
+  Audio: {fileID: 0}
+--- !u!114 &921876150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921876146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 0
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
   Audio: {fileID: 0}
 --- !u!1 &934335881
 GameObject:
@@ -24506,54 +24524,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 571074392}
     m_Modifications:
-    - target: {fileID: 3852935656990629450, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
+    - target: {fileID: 3852935656990629450, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
+        type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -277
       objectReference: {fileID: 0}
-    - target: {fileID: 3852935656990629450, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
+    - target: {fileID: 3852935656990629450, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
+        type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -43.3
       objectReference: {fileID: 0}
-    - target: {fileID: 3852935656990629450, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
+    - target: {fileID: 3852935656990629450, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
+        type: 3}
       propertyPath: m_AnchoredPosition.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -276.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -43.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 0, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
-      propertyPath: m_AnchoredPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -276.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 0, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -43.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 0, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
-      propertyPath: m_AnchoredPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 0, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -277
-      objectReference: {fileID: 0}
-    - target: {fileID: 0, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -43.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 0, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca, type: 3}
-      propertyPath: m_AnchoredPosition.z
-      value: 0
-      objectReference: {fileID: 0}
       objectReference: {fileID: 0}
     - target: {fileID: 6116449485086562217, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
         type: 3}
@@ -40561,65 +40545,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentIDCounter: 4
-{
-  "Options": [],
-  "Parameters": [],
-  "SpeechNodes": [
-    {
-      "Connections": [
-        {
-          "__type": "EditableSpeechConnection:#DialogueEditor",
-          "Conditions": [],
-          "NodeUID": 3
-        }
-      ],
-      "EditorInfo": {
-        "isRoot": true,
-        "xPos": 356,
-        "yPos": 22
-      },
-      "ID": 0,
-      "ParamActions": [],
-      "TMPFontGUID": null,
-      "Text": "The forest is in disarray. Fix what is broken, and the path will be clear. Find the pieces scattered across the woods and return them here. While the light will guide you, the shadow will test you. Be cautious, for the journey ahead is not without its trials",
-      "parentUIDs": [],
-      "AdvanceDialogueAutomatically": false,
-      "AudioGUID": null,
-      "AutoAdvanceShouldDisplayOption": false,
-      "IconGUID": null,
-      "Name": "Shadow",
-      "OptionUIDs": null,
-      "SpeechUID": 0,
-      "TimeUntilAdvance": 0,
-      "Volume": 0
-    },
-    {
-      "Connections": [],
-      "EditorInfo": {
-        "isRoot": false,
-        "xPos": 357,
-        "yPos": 202
-      },
-      "ID": 3,
-      "ParamActions": [],
-      "TMPFontGUID": null,
-      "Text": "Talk",
-      "OptionUIDs": null,
-      "SpeechUID": 0,
-      "TimeUntilAdvance": 0,
-      "Volume": 0
-    }
-  ]
-}
-
-    to Lumia to know which items will be necessary fix the street lamp","parentUIDs":[0],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Shadow","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":314,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":null,"parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
-  DefaultName: Shadow
-  DefaultSprite: {fileID: 21300000, guid: 2c2a5be59b4a36648a911535c6e46ab8, type: 3}
+  DefaultName: 
+  DefaultSprite: {fileID: 0}
   DefaultFont: {fileID: 0}
   NodeSerializedDataList:
-  - {fileID: 921876147}
-  - {fileID: 921876149}
+  - {fileID: 921876150}
   ContinueFont: {fileID: 0}
   EndConversationFont: {fileID: 0}
   Event:
@@ -40960,6 +40892,7 @@ GameObject:
   - component: {fileID: 1635617920}
   - component: {fileID: 1635617919}
   - component: {fileID: 1635617922}
+  - component: {fileID: 1635617923}
   m_Layer: 0
   m_Name: ConversationEventInfo
   m_TagString: Untagged
@@ -41088,6 +41021,25 @@ MonoBehaviour:
   NodeID: 4
   TMPFont: {fileID: 0}
   Icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  Audio: {fileID: 0}
+--- !u!114 &1635617923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635617916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00abedce3cdbbba46bf2d86c9518c9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls: []
+  NodeID: 0
+  TMPFont: {fileID: 0}
+  Icon: {fileID: 0}
   Audio: {fileID: 0}
 --- !u!4 &1637083152 stripped
 Transform:
@@ -42552,20 +42504,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83189876d4d389f43b7dd2e925aa112e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-{
-  "CurrentIDCounter": 11,
-  "json": "{\"Options\":[{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":172,\"yPos\":167},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I have the items \",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":10}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":623,\"yPos\":171},\"ID\":2,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"I still need to find them\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-19.5,\"yPos\":396},\"ID\":6,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Give the Items\",\"parentUIDs\":[5],\"SpeechUID\":-1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":257.5,\"yPos\":400},\"ID\":9,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Don''t Give Items\",\"parentUIDs\":[5],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":1},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":2}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":356,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Please find both Lamp and FlashLight and return this to me so that we can fix the street lamp\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lumia \",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":21.5,\"yPos\":364},\"ID\":3,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Press ''''G'''' to give the items\",\"parentUIDs\":[1],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lumia\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":18,\"yPos\":508},\"ID\":4,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"We Fixed the Steet Lamp\",\"parentUIDs\":[3],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"Lumia\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
-}
+  CurrentIDCounter: 1
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[],"EditorInfo":{"isRoot":true,"xPos":314,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":null,"parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":null,"OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
   saveVersion: 110
-  DefaultName: Lumia
-  DefaultSprite: {fileID: 21300000, guid: 2c2a5be59b4a36648a911535c6e46ab8, type: 3}
+  DefaultName: 
+  DefaultSprite: {fileID: 0}
   DefaultFont: {fileID: 0}
   NodeSerializedDataList:
-  - {fileID: 1635617917}
-  - {fileID: 1635617921}
-  - {fileID: 1635617920}
-  - {fileID: 1635617919}
-  - {fileID: 1635617922}
+  - {fileID: 1635617923}
   ContinueFont: {fileID: 0}
   EndConversationFont: {fileID: 0}
   Event:
