@@ -29,10 +29,5 @@ public class FlickeringLight : MonoBehaviour
         }
     }
 
-    public void StopFlicker()
-    {
-        Debug.Log("Flickering has stopped."); // Debugging line
-        isFlickering = false;
-        lightSource.intensity = 1f;
-    }
+   
 }

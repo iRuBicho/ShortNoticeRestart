@@ -4,13 +4,16 @@ using DialogueEditor;
 
 public class LumiaConversationStarter : MonoBehaviour
 {
-    [SerializeField] public NPCConversation myConversation;  // Make public so it's accessible
+    [SerializeField] public NPCConversation myConversation;
     [SerializeField] public TextMeshProUGUI pressFText;
-    [SerializeField] public GameObject dialogueUI;  // Make public so it's accessible
+    [SerializeField] public GameObject dialogueUI;
 
     public bool isNearPlayer = false;
-    private float dialogueTimer = 0f;
-    private float maxDialogueTime = 15f;
+
+    private void Start()
+    {
+        pressFText.enabled = false; // Ensure it is hidden initially
+    }
 
     private void Update()
     {
@@ -22,23 +25,7 @@ public class LumiaConversationStarter : MonoBehaviour
             {
                 ConversationManager.Instance.StartConversation(myConversation);
                 pressFText.enabled = false;
-                dialogueTimer = maxDialogueTime;
                 dialogueUI.SetActive(true);
-            }
-
-            if (dialogueUI.activeSelf)
-            {
-                dialogueTimer -= Time.deltaTime;
-            }
-
-            if (dialogueTimer <= 0f)
-            {
-                EndDialogue();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Space) && dialogueUI.activeSelf)
-            {
-                EndDialogue();
             }
         }
         else
@@ -46,12 +33,6 @@ public class LumiaConversationStarter : MonoBehaviour
             pressFText.enabled = false;
         }
     }
-    public void OnSelectHaveItem()
-    {
-        Debug.Log("Player selected: I have the items.");
-       
-    }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -67,11 +48,5 @@ public class LumiaConversationStarter : MonoBehaviour
         {
             isNearPlayer = false;
         }
-    }
-
-    private void EndDialogue()
-    {
-        ConversationManager.Instance.EndConversation();
-        dialogueUI.SetActive(false);
     }
 }

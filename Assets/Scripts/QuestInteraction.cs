@@ -6,7 +6,7 @@ public class QuestInteraction : MonoBehaviour
     public ItemManager itemManager;
     public string item1Tag = "Item1";
     public string item2Tag = "Item2";
-    public Light streetLamp;
+    public Light streetLamp;  
     public Transform interactionPoint;
 
     public bool isQuestCompleted = false;
@@ -36,11 +36,12 @@ public class QuestInteraction : MonoBehaviour
             return;
         }
 
-        Debug.Log("Quest completed. Items given to Lumia."); 
+        Debug.Log("Quest completed. Items given to Lumia.");
         isQuestCompleted = true;
 
         RemoveItemsFromInventory();
-        StopLightFlicker();
+        SetLightIntensity(80f);  // Set light intensity to 80 after quest completion
+        Debug.Log("Quest Completion Event Triggered.");
     }
 
     public void RemoveItemsFromInventory()
@@ -67,12 +68,16 @@ public class QuestInteraction : MonoBehaviour
         }
     }
 
-    public void StopLightFlicker()
+    public void SetLightIntensity(float intensity)
     {
         if (streetLamp != null)
         {
-            streetLamp.intensity = 1f;
-            Debug.Log("Street lamp flickering stopped."); 
+            streetLamp.intensity = intensity;  // Set the light intensity immediately,should be to 80!!!!
+            Debug.Log("Street lamp intensity set to " + intensity);
+        }
+        else
+        {
+            Debug.LogWarning("Street lamp is not assigned in the inspector.");
         }
     }
 }

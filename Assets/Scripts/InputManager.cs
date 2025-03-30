@@ -38,7 +38,6 @@ public class DialogueController : MonoBehaviour
                     }
                 }
 
-                // **Manually reset selection**
                 EventSystem.current.SetSelectedGameObject(null);
 
                 if (Input.GetMouseButtonDown(0))
@@ -72,13 +71,9 @@ public class DialogueController : MonoBehaviour
             }
         }
 
-        if (!ConversationManager.Instance.IsConversationActive)
+        if (!ConversationManager.Instance.IsConversationActive && lumiaConversationStarter != null)
         {
-            if (lumiaConversationStarter != null && lumiaConversationStarter.isNearPlayer)
-            {
-                lumiaConversationStarter.dialogueUI.SetActive(true);
-                ConversationManager.Instance.StartConversation(lumiaConversationStarter.myConversation);
-            }
+            lumiaConversationStarter.dialogueUI.SetActive(lumiaConversationStarter.isNearPlayer);
         }
     }
 
@@ -87,9 +82,10 @@ public class DialogueController : MonoBehaviour
         if (questInteraction.HasRequiredItems())
         {
             questInteraction.RemoveItemsFromInventory();
-            questInteraction.StopLightFlicker();
             questInteraction.isQuestCompleted = true;
+            questInteraction.SetLightIntensity(40f);  // Ensure the light intensity is set to 40
             Debug.Log("Items given to Lumia! The quest is complete.");
+            Debug.Log("Quest Completion Successful!");
         }
         else
         {
