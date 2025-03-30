@@ -15765,8 +15765,11 @@ MonoBehaviour:
   questInteraction: {fileID: 0}
   lumiaConversationStarter: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   lumiaCollider: {fileID: 1228966656}
   dialogueCanvas: {fileID: 571074391}
+=======
+>>>>>>> parent of 940e821 (UI Dialogue)
 =======
 >>>>>>> parent of 940e821 (UI Dialogue)
 --- !u!4 &443407379
@@ -24510,6 +24513,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 571074392}
     m_Modifications:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 808359371095546423, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
         type: 3}
       propertyPath: m_Enabled
@@ -24665,6 +24669,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -43.3
 >>>>>>> parent of 940e821 (UI Dialogue)
+=======
+    - target: {fileID: 3852935656990629450, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -43.3
+>>>>>>> parent of 940e821 (UI Dialogue)
       objectReference: {fileID: 0}
     - target: {fileID: 3900108754347413305, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
         type: 3}
@@ -24691,11 +24701,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ConversationManager
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 3900108755196472086, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
         type: 3}
       propertyPath: ScrollText
       value: 0
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 940e821 (UI Dialogue)
     - target: {fileID: 3900108755196472086, guid: d9fa78e8c3c4f2b4b8f7f77ca8426cca,
         type: 3}
       propertyPath: ScrollSpeed
@@ -24800,7 +24813,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: -302.568
+=======
+      value: -301
+>>>>>>> parent of 940e821 (UI Dialogue)
 =======
       value: -301
 >>>>>>> parent of 940e821 (UI Dialogue)
@@ -24844,7 +24861,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: -88.925
+=======
+      value: -43
+>>>>>>> parent of 940e821 (UI Dialogue)
 =======
       value: -43
 >>>>>>> parent of 940e821 (UI Dialogue)
@@ -35012,8 +35033,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalPosition: {x: 42.144, y: 23.81, z: 44.189}
   m_LocalScale: {x: 1.058018, y: 0.48699737, z: 0.48535964}
+=======
+  m_LocalPosition: {x: 42.737, y: 23.81, z: 44.297}
+  m_LocalScale: {x: 0.6725688, y: 0.48699737, z: 0.25736436}
+>>>>>>> parent of 940e821 (UI Dialogue)
 =======
   m_LocalPosition: {x: 42.737, y: 23.81, z: 44.297}
   m_LocalScale: {x: 0.6725688, y: 0.48699737, z: 0.25736436}
@@ -35928,9 +35954,12 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_AnchoredPosition: {x: -8.102, y: 51.899994}
   m_SizeDelta: {x: 900.2778, y: 100}
 =======
+=======
+>>>>>>> parent of 940e821 (UI Dialogue)
   m_AnchoredPosition: {x: 0, y: 75}
   m_SizeDelta: {x: 910, y: 100}
 >>>>>>> parent of 940e821 (UI Dialogue)
@@ -40866,7 +40895,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentIDCounter: 4
 <<<<<<< HEAD
+<<<<<<< HEAD
   json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":true,"xPos":356,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"The
+=======
+  json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":true,"xPos":250.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"The
+>>>>>>> parent of 940e821 (UI Dialogue)
 =======
   json: '{"Options":[],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":true,"xPos":250.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"The
 >>>>>>> parent of 940e821 (UI Dialogue)
@@ -40875,7 +40908,11 @@ MonoBehaviour:
     guide you, the shadow will test you. Be cautious, for the journey ahead is not
     without its trials","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Shadow
 <<<<<<< HEAD
+<<<<<<< HEAD
     ","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":357,"yPos":202},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Talk
+=======
+    ","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":251.5,"yPos":202},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Talk
+>>>>>>> parent of 940e821 (UI Dialogue)
 =======
     ","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":251.5,"yPos":202},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Talk
 >>>>>>> parent of 940e821 (UI Dialogue)
@@ -42820,6 +42857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   CurrentIDCounter: 11
   json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":5}],"EditorInfo":{"isRoot":false,"xPos":172,"yPos":167},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"I
     have the items ","parentUIDs":[0],"SpeechUID":-1},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":10}],"EditorInfo":{"isRoot":false,"xPos":623,"yPos":171},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"I
@@ -42832,6 +42870,17 @@ MonoBehaviour:
     Fixed the Steet Lamp","parentUIDs":[6],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lumia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":6},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":9}],"EditorInfo":{"isRoot":false,"xPos":49.5,"yPos":263},"ID":5,"ParamActions":[],"TMPFontGUID":null,"Text":"Would 
     you like to give me the items?","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lumia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":692.5,"yPos":273},"ID":10,"ParamActions":[],"TMPFontGUID":null,"Text":"Come
     back when you have all the items","parentUIDs":[2],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lumia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+=======
+  CurrentIDCounter: 5
+  json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":22.5,"yPos":186},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+    have the items ","parentUIDs":[0],"SpeechUID":-1},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":454.5,"yPos":202},"ID":2,"ParamActions":[],"TMPFontGUID":null,"Text":"I
+    still need to find them","parentUIDs":[0],"SpeechUID":-1}],"Parameters":[],"SpeechNodes":[{"Connections":[{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":1},{"__type":"EditableOptionConnection:#DialogueEditor","Conditions":[],"NodeUID":2}],"EditorInfo":{"isRoot":true,"xPos":250.5,"yPos":22},"ID":0,"ParamActions":[],"TMPFontGUID":null,"Text":"Please
+    find both Lamp and FlashLight and return this to me so that we can fix the street
+    lamp","parentUIDs":[],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lumia
+    ","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":4}],"EditorInfo":{"isRoot":false,"xPos":21.5,"yPos":364},"ID":3,"ParamActions":[],"TMPFontGUID":null,"Text":"Press
+    ''''G''''  to give the items","parentUIDs":[1],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lumia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0},{"Connections":[],"EditorInfo":{"isRoot":false,"xPos":18,"yPos":508},"ID":4,"ParamActions":[],"TMPFontGUID":null,"Text":"We
+    Fixed the Steet Lamp","parentUIDs":[3],"AdvanceDialogueAutomatically":false,"AudioGUID":null,"AutoAdvanceShouldDisplayOption":false,"IconGUID":null,"Name":"Lumia","OptionUIDs":null,"SpeechUID":0,"TimeUntilAdvance":0,"Volume":0}]}'
+>>>>>>> parent of 940e821 (UI Dialogue)
 =======
   CurrentIDCounter: 5
   json: '{"Options":[{"Connections":[{"__type":"EditableSpeechConnection:#DialogueEditor","Conditions":[],"NodeUID":3}],"EditorInfo":{"isRoot":false,"xPos":22.5,"yPos":186},"ID":1,"ParamActions":[],"TMPFontGUID":null,"Text":"I
