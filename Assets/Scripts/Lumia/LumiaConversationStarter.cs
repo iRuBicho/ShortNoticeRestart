@@ -46,6 +46,12 @@ public class LumiaConversationStarter : MonoBehaviour
             pressFText.enabled = false;
         }
     }
+    public void OnSelectHaveItem()
+    {
+        Debug.Log("Player selected: I have the items.");
+       
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
