@@ -10,6 +10,11 @@ public class LumiaConversationStarter : MonoBehaviour
 
     public bool isNearPlayer = false;
 
+    private void Start()
+    {
+        pressFText.enabled = false; // Ensure it is hidden initially
+    }
+
     private void Update()
     {
         if (isNearPlayer)
@@ -29,11 +34,6 @@ public class LumiaConversationStarter : MonoBehaviour
         }
     }
 
-    public void OnSelectHaveItem()
-    {
-        Debug.Log("Player selected: I have the items.");
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -48,11 +48,5 @@ public class LumiaConversationStarter : MonoBehaviour
         {
             isNearPlayer = false;
         }
-    }
-
-    private void EndDialogue()
-    {
-        ConversationManager.Instance.EndConversation();
-        dialogueUI.SetActive(false);
     }
 }

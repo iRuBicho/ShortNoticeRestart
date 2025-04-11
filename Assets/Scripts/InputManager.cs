@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using DialogueEditor;
 
 public class DialogueController : MonoBehaviour
@@ -6,6 +7,8 @@ public class DialogueController : MonoBehaviour
     public FPSController cameraController;
     public QuestInteraction questInteraction;
     public LumiaConversationStarter lumiaConversationStarter;
+    public Collider lumiaCollider;
+    public Canvas dialogueCanvas;
 
     void Update()
     {
@@ -21,6 +24,22 @@ public class DialogueController : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
 
+                if (lumiaCollider != null)
+                {
+                    lumiaCollider.enabled = false;
+                }
+
+                if (dialogueCanvas != null)
+                {
+                    CanvasGroup canvasGroup = dialogueCanvas.GetComponent<CanvasGroup>();
+                    if (canvasGroup != null)
+                    {
+                        canvasGroup.interactable = false;
+                    }
+                }
+
+                EventSystem.current.SetSelectedGameObject(null);
+
                 if (Input.GetMouseButtonDown(0))
                 {
                     ConversationManager.Instance.PressSelectedOption();
@@ -35,25 +54,44 @@ public class DialogueController : MonoBehaviour
 
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+
+                if (lumiaCollider != null)
+                {
+                    lumiaCollider.enabled = true;
+                }
+
+                if (dialogueCanvas != null)
+                {
+                    CanvasGroup canvasGroup = dialogueCanvas.GetComponent<CanvasGroup>();
+                    if (canvasGroup != null)
+                    {
+                        canvasGroup.interactable = true;
+                    }
+                }
             }
         }
 
-        if (!ConversationManager.Instance.IsConversationActive)
+        if (!ConversationManager.Instance.IsConversationActive && lumiaConversationStarter != null)
         {
-            if (Input.GetKeyDown(KeyCode.G) && questInteraction != null && !questInteraction.isQuestCompleted)
-            {
-                if (questInteraction.HasRequiredItems())
-                {
-                    questInteraction.RemoveItemsFromInventory();
-                    questInteraction.StopLightFlicker();
-                    questInteraction.isQuestCompleted = true;
-                    Debug.Log("Items given to Lumia! The quest is complete.");
-                }
-            }
+            lumiaConversationStarter.dialogueUI.SetActive(lumiaConversationStarter.isNearPlayer);
+        }
+    }
 
-            if (Input.GetKeyDown(KeyCode.F) && lumiaConversationStarter != null && lumiaConversationStarter.isNearPlayer)
+    public void CheckItemsForQuest()
+    {
+        if (questInteraction.HasRequiredItems())
+        {
+            questInteraction.RemoveItemsFromInventory();
+            questInteraction.isQuestCompleted = true;
+            questInteraction.SetLightIntensity(40f);  // Ensure the light intensity is set to 40
+            Debug.Log("Items given to Lumia! The quest is complete.");
+            Debug.Log("Quest Completion Successful!");
+        }
+        else
+        {
+            Debug.Log("Player does not have the required items.");
+            if (lumiaConversationStarter != null)
             {
-                lumiaConversationStarter.dialogueUI.SetActive(true);
                 ConversationManager.Instance.StartConversation(lumiaConversationStarter.myConversation);
             }
         }

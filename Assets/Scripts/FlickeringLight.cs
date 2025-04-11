@@ -8,7 +8,6 @@ public class FlickeringLight : MonoBehaviour
     public float maxFlickerIntensity = 1.5f;
     public float flickerSpeed = 0.05f;
     private bool isFlickering = true;
-    
 
     private void Start()
     {
@@ -27,13 +26,8 @@ public class FlickeringLight : MonoBehaviour
             lightSource.intensity = Random.Range(minFlickerIntensity, maxFlickerIntensity);
             yield return new WaitForSeconds(flickerSpeed);
             yield return new WaitForSeconds(Random.Range(0.03f, 0.1f));
-
         }
     }
 
-    public void StopFlicker()
-    {
-        isFlickering = false;
-        lightSource.intensity = 1f;
-    }
+   
 }

@@ -8,6 +8,7 @@ TagManager:
   - Terrain
   - Item1
   - Item2
+  - QuestLight
   layers:
   - Default
   - TransparentFX
