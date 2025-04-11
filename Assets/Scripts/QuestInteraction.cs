@@ -64,7 +64,7 @@ public class QuestInteraction : MonoBehaviour
             }
 
             Debug.Log("All required items removed.");
-            itemManager.UpdateCurrentItemAfterRemoval();
+         
         }
     }
 
