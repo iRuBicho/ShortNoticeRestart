@@ -24265,22 +24265,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!114 &1043565442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1043565437}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e220fede0c423d1439dd1fa06a565b76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightSource: {fileID: 1043565444}
-  minFlickerIntensity: 10
-  maxFlickerIntensity: 40
-  flickerSpeed: 0.02
 --- !u!108 &1043565444 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 4491464743887697725, guid: 3a162d9b3eabf5541aeafc613988e630,
@@ -34957,7 +34941,10 @@ MonoBehaviour:
   item1Tag: Item1
   item2Tag: Item2
   streetLamp: {fileID: 1043565444}
-  interactionPoint: {fileID: 0}
+  minFlickerIntensity: 0.3
+  maxFlickerIntensity: 1.5
+  flickerSpeed: 0.05
+  finalIntensity: 30
   isQuestCompleted: 1
 --- !u!1 &1240776667
 GameObject:
@@ -35709,10 +35696,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1043565439}
-    - targetCorrespondingSourceObject: {fileID: 2209340208989007885, guid: 3a162d9b3eabf5541aeafc613988e630,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1043565442}
   m_SourcePrefab: {fileID: 100100000, guid: 3a162d9b3eabf5541aeafc613988e630, type: 3}
 --- !u!4 &1445812503 stripped
 Transform:

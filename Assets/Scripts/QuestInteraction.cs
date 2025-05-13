@@ -1,31 +1,59 @@
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class QuestInteraction : MonoBehaviour
 {
+    [Header("Item Requirements")]
     public ItemManager itemManager;
     public string item1Tag = "Item1";
     public string item2Tag = "Item2";
-    public Light streetLamp;  
-    public Transform interactionPoint;
+
+    [Header("Lamp Settings")]
+    public Light streetLamp;
+    public float minFlickerIntensity = 0.3f;
+    public float maxFlickerIntensity = 1.5f;
+    public float flickerSpeed = 0.05f;
+    public float finalIntensity = 80f;
 
     public bool isQuestCompleted = false;
+    private bool isFlickering = true;
 
-    public bool HasRequiredItems()
+    private void Start()
     {
-        bool hasItem1 = false;
-        bool hasItem2 = false;
-
-        foreach (GameObject item in itemManager.collectedItems)
+        if (streetLamp == null)
         {
-            if (item.CompareTag(item1Tag))
-                hasItem1 = true;
-
-            if (item.CompareTag(item2Tag))
-                hasItem2 = true;
+            streetLamp = GetComponent<Light>();
         }
 
-        return hasItem1 && hasItem2;
+        StartCoroutine(Flicker());
+    }
+
+    private IEnumerator Flicker()
+    {
+        while (isFlickering)
+        {
+            if (streetLamp != null)
+            {
+                streetLamp.intensity = Random.Range(minFlickerIntensity, maxFlickerIntensity);
+            }
+
+            yield return new WaitForSeconds(flickerSpeed);
+            yield return new WaitForSeconds(Random.Range(0.03f, 0.1f));
+        }
+    }
+
+    public void SetLightIntensity(float intensity)
+    {
+        if (streetLamp != null)
+        {
+            streetLamp.intensity = intensity;
+            Debug.Log("Street lamp intensity set to: " + intensity);
+        }
+        else
+        {
+            Debug.LogWarning("Street lamp is not assigned.");
+        }
     }
 
     public void CompleteQuest()
@@ -40,8 +68,22 @@ public class QuestInteraction : MonoBehaviour
         isQuestCompleted = true;
 
         RemoveItemsFromInventory();
-        SetLightIntensity(80f);  // Set light intensity to 80 after quest completion
+        StopFlickering();
         Debug.Log("Quest Completion Event Triggered.");
+    }
+
+    public bool HasRequiredItems()
+    {
+        bool hasItem1 = false;
+        bool hasItem2 = false;
+
+        foreach (GameObject item in itemManager.collectedItems)
+        {
+            if (item.CompareTag(item1Tag)) hasItem1 = true;
+            if (item.CompareTag(item2Tag)) hasItem2 = true;
+        }
+
+        return hasItem1 && hasItem2;
     }
 
     public void RemoveItemsFromInventory()
@@ -56,28 +98,23 @@ public class QuestInteraction : MonoBehaviour
             }
         }
 
-        if (itemsToRemove.Count > 0)
+        foreach (GameObject item in itemsToRemove)
         {
-            foreach (GameObject item in itemsToRemove)
-            {
-                itemManager.RemoveItem(item);
-            }
-
-            Debug.Log("All required items removed.");
-         
+            itemManager.RemoveItem(item);
         }
+
+        Debug.Log("All required items removed.");
     }
 
-    public void SetLightIntensity(float intensity)
+    public void StopFlickering()
     {
+        isFlickering = false;
+        StopAllCoroutines();
+
         if (streetLamp != null)
         {
-            streetLamp.intensity = intensity;  // Set the light intensity immediately,should be to 80!!!!
-            Debug.Log("Street lamp intensity set to " + intensity);
-        }
-        else
-        {
-            Debug.LogWarning("Street lamp is not assigned in the inspector.");
+            streetLamp.intensity = finalIntensity;
+            Debug.Log("Flickering stopped. Lamp set to steady intensity: " + finalIntensity);
         }
     }
 }
