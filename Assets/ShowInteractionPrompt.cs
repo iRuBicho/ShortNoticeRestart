@@ -5,7 +5,7 @@ public class ShowInteractionPrompt : MonoBehaviour
 {
     public string promptText = "Press F to Talk";
     public KeyCode interactionKey = KeyCode.F;
-    public string conversationTitle = "Lumia Lamp Explanation"; 
+    public string conversationTitle = "";
 
     private bool playerInside = false;
 
@@ -31,7 +31,7 @@ public class ShowInteractionPrompt : MonoBehaviour
     {
         if (playerInside && Input.GetKeyDown(interactionKey))
         {
-            DialogueManager.StartConversation(conversationTitle);
+          
         }
     }
 }

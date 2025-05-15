@@ -7,7 +7,7 @@ public class PickupItem : MonoBehaviour
     public string questName;
     public string counterName;
     public KeyCode pickupKey = KeyCode.F;
-    public UnityEvent onPickup; 
+    public UnityEvent onPickup;
     private bool playerInside = false;
     private bool pickedUp = false;
 
@@ -39,9 +39,8 @@ public class PickupItem : MonoBehaviour
     {
         if (playerInside && !pickedUp && other.CompareTag("Player") && Input.GetKeyDown(pickupKey))
         {
-            onPickup.Invoke(); 
+            onPickup.Invoke();
             pickedUp = true;
-            
             GetComponent<Collider>().enabled = false;
             if (GetComponent<ShowInteractionPrompt>() != null)
             {

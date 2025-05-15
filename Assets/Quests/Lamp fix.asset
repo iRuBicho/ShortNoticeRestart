@@ -315,8 +315,8 @@ MonoBehaviour:
     m_childIndexList: 01000000
     m_canvasRect:
       serializedVersion: 2
-      x: 165
-      y: 32
+      x: 164.33334
+      y: 31.21569
       width: 120
       height: 48
   - m_id:
