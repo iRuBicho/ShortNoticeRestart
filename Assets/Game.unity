@@ -37148,7 +37148,7 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: Lumia IC
+  conversation: Lamp Pickup Prompt
   conversationConversant: {fileID: 1237077769}
   conversationActor: {fileID: 578722327}
   startConversationEntryID: -1
