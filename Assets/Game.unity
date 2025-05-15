@@ -15737,15 +15737,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8208792566947488129, guid: eba652cfb3edc0c48a80820dcbac5002,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 413209897}
-    - targetCorrespondingSourceObject: {fileID: 8208792566947488129, guid: eba652cfb3edc0c48a80820dcbac5002,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 413209896}
-    - targetCorrespondingSourceObject: {fileID: 8208792566947488129, guid: eba652cfb3edc0c48a80820dcbac5002,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 413209900}
+    - targetCorrespondingSourceObject: {fileID: 8208792566947488129, guid: eba652cfb3edc0c48a80820dcbac5002,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 413209901}
+    - targetCorrespondingSourceObject: {fileID: 8208792566947488129, guid: eba652cfb3edc0c48a80820dcbac5002,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 413209902}
   m_SourcePrefab: {fileID: 100100000, guid: eba652cfb3edc0c48a80820dcbac5002, type: 3}
 --- !u!4 &413209893 stripped
 Transform:
@@ -15780,81 +15780,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0.00064518116, y: 0.14511526, z: 0.000000011175871}
---- !u!114 &413209896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413209894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d18230d3a29b2a418e94d126c53f276, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_questID:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_questNodeID:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_counterName:
-    m_text: HasLamp
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_conditionalEvent:
-    questID:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    requiredQuestState: 0
-    questNodeID:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    requiredQuestNodeState: 0
-    onConditionMet:
-      m_PersistentCalls:
-        m_Calls: []
---- !u!114 &413209897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413209894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79c7719e6566674b8c4d70a6fc32d34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagMask:
-    m_tags: []
-  m_onTriggerEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 413209896}
-        m_TargetAssemblyTypeName: PixelCrushers.QuestMachine.QuestControl, Assembly-CSharp-firstpass
-        m_MethodName: IncrementQuestCounter
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: Get,Lamp
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_onTriggerExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &413209900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15938,6 +15863,79 @@ MonoBehaviour:
   useBarkTitlePicker: 1
   useQuestNamePicker: 0
   selectedDatabase: {fileID: 11400000, guid: eb91e0c9723f7f245ba843f6516a3951, type: 2}
+--- !u!114 &413209901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413209894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e9c049bf5bb81940ad32bfbc2542709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questName: Lamp fix
+  counterName: HasLamp
+  pickupKey: 102
+  onPickup:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 413209902}
+        m_TargetAssemblyTypeName: PixelCrushers.QuestMachine.QuestControl, Assembly-CSharp-firstpass
+        m_MethodName: IncrementQuestCounter
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &413209902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 413209894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d18230d3a29b2a418e94d126c53f276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_questID:
+    m_text: 
+    m_stringAsset: {fileID: 0}
+    m_textTable: {fileID: 0}
+    m_textTableFieldID: 0
+  m_questNodeID:
+    m_text: 
+    m_stringAsset: {fileID: 0}
+    m_textTable: {fileID: 0}
+    m_textTableFieldID: 0
+  m_counterName:
+    m_text: 
+    m_stringAsset: {fileID: 0}
+    m_textTable: {fileID: 0}
+    m_textTableFieldID: 0
+  m_conditionalEvent:
+    questID:
+      m_text: 
+      m_stringAsset: {fileID: 0}
+      m_textTable: {fileID: 0}
+      m_textTableFieldID: 0
+    requiredQuestState: 0
+    questNodeID:
+      m_text: 
+      m_stringAsset: {fileID: 0}
+      m_textTable: {fileID: 0}
+      m_textTableFieldID: 0
+    requiredQuestNodeState: 0
+    onConditionMet:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!4 &483011176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5154010266989119465, guid: 3a162d9b3eabf5541aeafc613988e630,
@@ -18151,15 +18149,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2643009974593295904, guid: 568da040d48fd2349b368ac1caea4005,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 796201117}
-    - targetCorrespondingSourceObject: {fileID: 2643009974593295904, guid: 568da040d48fd2349b368ac1caea4005,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 796201120}
-    - targetCorrespondingSourceObject: {fileID: 2643009974593295904, guid: 568da040d48fd2349b368ac1caea4005,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 796201121}
+    - targetCorrespondingSourceObject: {fileID: 2643009974593295904, guid: 568da040d48fd2349b368ac1caea4005,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 796201122}
+    - targetCorrespondingSourceObject: {fileID: 2643009974593295904, guid: 568da040d48fd2349b368ac1caea4005,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 796201123}
   m_SourcePrefab: {fileID: 100100000, guid: 568da040d48fd2349b368ac1caea4005, type: 3}
 --- !u!4 &796201112 stripped
 Transform:
@@ -18194,82 +18192,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: -0.0065902844, y: 0.112116665, z: -0.0000946857}
---- !u!114 &796201117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796201113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79c7719e6566674b8c4d70a6fc32d34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagMask:
-    m_tags:
-    - Player
-  m_onTriggerEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 796201120}
-        m_TargetAssemblyTypeName: PixelCrushers.QuestMachine.QuestControl, Assembly-CSharp-firstpass
-        m_MethodName: IncrementQuestCounter
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_onTriggerExit:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &796201120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796201113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d18230d3a29b2a418e94d126c53f276, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_questID:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_questNodeID:
-    m_text: 
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_counterName:
-    m_text: HasFlashlight
-    m_stringAsset: {fileID: 0}
-    m_textTable: {fileID: 0}
-    m_textTableFieldID: 0
-  m_conditionalEvent:
-    questID:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    requiredQuestState: 0
-    questNodeID:
-      m_text: 
-      m_stringAsset: {fileID: 0}
-      m_textTable: {fileID: 0}
-      m_textTableFieldID: 0
-    requiredQuestNodeState: 0
-    onConditionMet:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!114 &796201121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18353,6 +18275,79 @@ MonoBehaviour:
   useBarkTitlePicker: 1
   useQuestNamePicker: 1
   selectedDatabase: {fileID: 11400000, guid: eb91e0c9723f7f245ba843f6516a3951, type: 2}
+--- !u!114 &796201122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796201113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e9c049bf5bb81940ad32bfbc2542709, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questName: Lamp fix
+  counterName: HasFlashlight
+  pickupKey: 102
+  onPickup:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 796201123}
+        m_TargetAssemblyTypeName: PixelCrushers.QuestMachine.QuestControl, Assembly-CSharp-firstpass
+        m_MethodName: SetQuestCounter
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &796201123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 796201113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d18230d3a29b2a418e94d126c53f276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_questID:
+    m_text: 
+    m_stringAsset: {fileID: 0}
+    m_textTable: {fileID: 0}
+    m_textTableFieldID: 0
+  m_questNodeID:
+    m_text: 
+    m_stringAsset: {fileID: 0}
+    m_textTable: {fileID: 0}
+    m_textTableFieldID: 0
+  m_counterName:
+    m_text: 
+    m_stringAsset: {fileID: 0}
+    m_textTable: {fileID: 0}
+    m_textTableFieldID: 0
+  m_conditionalEvent:
+    questID:
+      m_text: 
+      m_stringAsset: {fileID: 0}
+      m_textTable: {fileID: 0}
+      m_textTableFieldID: 0
+    requiredQuestState: 0
+    questNodeID:
+      m_text: 
+      m_stringAsset: {fileID: 0}
+      m_textTable: {fileID: 0}
+      m_textTableFieldID: 0
+    requiredQuestNodeState: 0
+    onConditionMet:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &800809858
 GameObject:
   m_ObjectHideFlags: 0
@@ -34325,10 +34320,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1237077769}
   - component: {fileID: 1237077770}
-  - component: {fileID: 1237077772}
   - component: {fileID: 1237077776}
   - component: {fileID: 1237077775}
   - component: {fileID: 1237077773}
+  - component: {fileID: 1237077777}
   m_Layer: 0
   m_Name: ' Lumia'
   m_TagString: Untagged
@@ -34370,19 +34365,6 @@ MonoBehaviour:
   stopPoint: {fileID: 1086135478}
   stopDistance: 0
   hasStopped: 1
---- !u!114 &1237077772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1237077768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ade36dd0ea4fcf4bb0c0eec7269af42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversationTitle: Lumia Lamp Explanation
 --- !u!114 &1237077773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34429,7 +34411,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1237077768}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
   m_Name: 
@@ -34437,22 +34419,26 @@ MonoBehaviour:
   trigger: 32
   delayOneFrame: 0
   condition:
-    luaConditions: []
+    luaConditions:
+    - Variable["HasExplainedLamp"] == false
+    - Variable["HasExplainedLamp"] == true
     questConditions: []
     acceptedTags: []
     acceptedGameObjects: []
     luaWizardIndex: -1
     lastEvaluationValue: 0
   setQuestState: 1
-  questName: 
-  questState: 0
+  questName: Lamp Fix
+  questState: 2
   setQuestEntryState: 0
   questEntryNumber: 1
   questEntryState: 0
   setAnotherQuestEntryState: 0
   anotherQuestEntryNumber: 1
   anotherQuestEntryState: 0
-  luaCode: 
+  luaCode: "if Variable[\"HasExplainedLamp\"] == false then\r\n    DialogueManager.StartConversation(\"Lumia
+    IC\")\r\nelseif Variable[\"HasExplainedLamp\"] == true then\r\n    DialogueManager.StartConversation(\"Lumia
+    AFI\")\r\nend"
   sequence: 
   sequenceSpeaker: {fileID: 0}
   sequenceListener: {fileID: 0}
@@ -34473,9 +34459,9 @@ MonoBehaviour:
   allowBarksDuringConversations: 0
   skipBarkIfNoValidEntries: 0
   cacheBarkLines: 0
-  conversation: 
-  conversationConversant: {fileID: 0}
-  conversationActor: {fileID: 0}
+  conversation: Lumia IC
+  conversationConversant: {fileID: 1237077769}
+  conversationActor: {fileID: 578722327}
   startConversationEntryID: -1
   startConversationEntryTitle: 
   overrideDialogueUI: {fileID: 0}
@@ -34499,8 +34485,81 @@ MonoBehaviour:
       m_Calls: []
   useConversationTitlePicker: 1
   useBarkTitlePicker: 1
-  useQuestNamePicker: 1
+  useQuestNamePicker: 0
   selectedDatabase: {fileID: 11400000, guid: eb91e0c9723f7f245ba843f6516a3951, type: 2}
+--- !u!114 &1237077777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237077768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2185d538298c73f418ba252c3e3e01ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_key: 
+  m_appendSaverTypeToKey: 0
+  m_saveAcrossSceneChanges: 1
+  m_restoreStateOnStart: 0
+  m_forwardEventsToListeners: 1
+  m_includeInSavedGameData: 1
+  m_addNewQuestsSinceSavedGame: 0
+  m_questList:
+  - {fileID: 11400000, guid: 3836226eb18fc6b478540f6090ecd7c0, type: 2}
+  m_deletedStaticQuests: []
+  m_id:
+    m_text: 
+    m_stringAsset: {fileID: 0}
+    m_textTable: {fileID: 0}
+    m_textTableFieldID: 0
+  m_displayName:
+    m_text: 
+    m_stringAsset: {fileID: 0}
+    m_textTable: {fileID: 0}
+    m_textTableFieldID: 0
+  m_image: {fileID: 0}
+  m_textTable: {fileID: 0}
+  m_noQuestsUIContents:
+    m_icon: {fileID: 0}
+    m_headingText:
+      m_text: 
+      m_stringAsset: {fileID: 0}
+      m_textTable: {fileID: 0}
+      m_textTableFieldID: 0
+    m_bodyText:
+      m_text: 
+      m_stringAsset: {fileID: 0}
+      m_textTable: {fileID: 0}
+      m_textTableFieldID: 0
+  m_offerableQuestsUIContents:
+    m_icon: {fileID: 0}
+    m_headingText:
+      m_text: 
+      m_stringAsset: {fileID: 0}
+      m_textTable: {fileID: 0}
+      m_textTableFieldID: 0
+    m_bodyText:
+      m_text: 
+      m_stringAsset: {fileID: 0}
+      m_textTable: {fileID: 0}
+      m_textTableFieldID: 0
+  m_activeQuestsUIContents:
+    m_icon: {fileID: 0}
+    m_headingText:
+      m_text: 
+      m_stringAsset: {fileID: 0}
+      m_textTable: {fileID: 0}
+      m_textTableFieldID: 0
+    m_bodyText:
+      m_text: 
+      m_stringAsset: {fileID: 0}
+      m_textTable: {fileID: 0}
+      m_textTableFieldID: 0
+  m_completedQuestDialogueMode: 0
+  m_questDialogueUI: {fileID: 0}
+  m_cooldownCheckFrequency: 0
 --- !u!1 &1240776667
 GameObject:
   m_ObjectHideFlags: 0
@@ -35462,6 +35521,55 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1661006621}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1397135161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1397135163}
+  - component: {fileID: 1397135162}
+  m_Layer: 0
+  m_Name: Dialogue System Scene Events
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1397135162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397135161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca55201633b97d3408f439eb84ecb249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueEntrySceneEvents:
+  - guid: cea01470-1f88-4a4d-ab0d-fc3c808c40aa
+    onExecute:
+      m_PersistentCalls:
+        m_Calls: []
+--- !u!4 &1397135163
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397135161}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1414430994
 GameObject:
@@ -43350,3 +43458,4 @@ SceneRoots:
   - {fileID: 1228966657}
   - {fileID: 380452276}
   - {fileID: 1372573186}
+  - {fileID: 1397135163}

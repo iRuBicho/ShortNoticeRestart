@@ -258,6 +258,17 @@ MonoBehaviour:
         m_textTableFieldID: 0
       m_operation: 2
       m_literalValue: 1
+  - m_name:
+      m_text: HasMetLumia
+      m_stringAsset: {fileID: 0}
+      m_textTable: {fileID: 0}
+      m_textTableFieldID: 0
+    m_currentValue: 0
+    m_randomizeInitialValue: 0
+    m_minValue: 0
+    m_maxValue: 999
+    m_updateMode: 1
+    m_messageEventList: []
   m_nodeList:
   - m_id:
       m_text: Quest-53386.start
@@ -352,8 +363,8 @@ MonoBehaviour:
     m_childIndexList: 02000000
     m_canvasRect:
       serializedVersion: 2
-      x: 162
-      y: 127
+      x: 157
+      y: 134
       width: 120
       height: 48
   - m_id:
@@ -398,8 +409,8 @@ MonoBehaviour:
     m_childIndexList: 
     m_canvasRect:
       serializedVersion: 2
-      x: 167
-      y: 211
+      x: 183
+      y: 263
       width: 120
       height: 35
   m_textTable: {fileID: 0}
