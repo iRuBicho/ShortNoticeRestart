@@ -48,18 +48,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 641a501636ec3644993211c008d9a8a4, type: 3}
-  m_Name: LumiaItemQuest
+  m_Name: Quest1
   m_EditorClassIdentifier: 
   m_isInstance: 0
   m_originalAsset: {fileID: 0}
   m_fileVersion: 1
   m_id:
-    m_text: Quest-5654
+    m_text: Quest1
     m_stringAsset: {fileID: 0}
     m_textTable: {fileID: 0}
     m_textTableFieldID: 0
   m_title:
-    m_text: Quest -5654
+    m_text: Quest
     m_stringAsset: {fileID: 0}
     m_textTable: {fileID: 0}
     m_textTableFieldID: 0
@@ -71,7 +71,7 @@ MonoBehaviour:
     m_textTableFieldID: 0
   m_labels: []
   m_questGiverID:
-    m_text: 
+    m_text: Lumia
     m_stringAsset: {fileID: 0}
     m_textTable: {fileID: 0}
     m_textTableFieldID: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_cooldownSecondsRemaining: 0
   m_noRepeatIfSuccessful: 0
   m_saveAllIfWaitingToStart: 0
-  m_state: 0
+  m_state: 1
   m_stateInfoList:
   - m_actionList: []
     m_categorizedContentList:
@@ -140,7 +140,7 @@ MonoBehaviour:
     m_currentValue: 0
     m_randomizeInitialValue: 0
     m_minValue: 0
-    m_maxValue: 1
+    m_maxValue: 2
     m_updateMode: 0
     m_messageEventList: []
   - m_name:
@@ -151,12 +151,12 @@ MonoBehaviour:
     m_currentValue: 0
     m_randomizeInitialValue: 0
     m_minValue: 0
-    m_maxValue: 1
+    m_maxValue: 2
     m_updateMode: 0
     m_messageEventList: []
   m_nodeList:
   - m_id:
-      m_text: Quest-5654.start
+      m_text: Start
       m_stringAsset: {fileID: 0}
       m_textTable: {fileID: 0}
       m_textTableFieldID: 0
@@ -197,8 +197,8 @@ MonoBehaviour:
     m_childIndexList: 01000000
     m_canvasRect:
       serializedVersion: 2
-      x: 200
-      y: 20
+      x: 154.39996
+      y: 18.399998
       width: 120
       height: 48
   - m_id:
@@ -245,12 +245,12 @@ MonoBehaviour:
     m_childIndexList: 02000000
     m_canvasRect:
       serializedVersion: 2
-      x: 196.80002
-      y: 86.00001
+      x: 156.00005
+      y: 97.200005
       width: 120
       height: 48
   - m_id:
-      m_text: Success
+      m_text: Sucess
       m_stringAsset: {fileID: 0}
       m_textTable: {fileID: 0}
       m_textTableFieldID: 0
@@ -292,8 +292,8 @@ MonoBehaviour:
     m_childIndexList: 
     m_canvasRect:
       serializedVersion: 2
-      x: 197.60004
-      y: 162.80002
+      x: 174.40004
+      y: 194.80005
       width: 120
       height: 35
   m_textTable: {fileID: 0}

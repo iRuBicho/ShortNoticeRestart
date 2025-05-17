@@ -10205,7 +10205,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127253202}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5cd644b2b9457874ca760049bf586ab8, type: 3}
   m_Name: 
@@ -15715,7 +15715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_questID:
-    m_text: LumiaItemQuest
+    m_text: Quest-5654
     m_stringAsset: {fileID: 0}
     m_textTable: {fileID: 0}
     m_textTableFieldID: 0
@@ -18148,7 +18148,7 @@ PrefabInstance:
     - target: {fileID: 2643009974593295904, guid: 568da040d48fd2349b368ac1caea4005,
         type: 3}
       propertyPath: m_Name
-      value: FlashlightBig (PU)
+      value: Flashlight (PU)
       objectReference: {fileID: 0}
     - target: {fileID: 2643009974593295904, guid: 568da040d48fd2349b368ac1caea4005,
         type: 3}
@@ -18291,7 +18291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_questID:
-    m_text: LumiaItemQuest
+    m_text: Quest-5654
     m_stringAsset: {fileID: 0}
     m_textTable: {fileID: 0}
     m_textTableFieldID: 0
@@ -34396,7 +34396,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228966654}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
   m_Name: 
@@ -34412,7 +34412,7 @@ MonoBehaviour:
     lastEvaluationValue: 0
   setQuestState: 1
   questName: 
-  questState: 0
+  questState: 1
   setQuestEntryState: 0
   questEntryNumber: 1
   questEntryState: 0
@@ -34568,7 +34568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   promptText: Press F to Talk
   interactionKey: 102
-  conversationTitle: Lumia Encounter
+  conversationTitle: 
 --- !u!114 &1228966663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34592,7 +34592,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: eb1cf1f3eaf42fc4393537681e1fa86c, type: 2}
   m_deletedStaticQuests: []
   m_id:
-    m_text: 
+    m_text: Lumia
     m_stringAsset: {fileID: 0}
     m_textTable: {fileID: 0}
     m_textTableFieldID: 0
@@ -35045,6 +35045,67 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1661006621}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1399521466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1399521468}
+  - component: {fileID: 1399521467}
+  m_Layer: 0
+  m_Name: Dialogue System Scene Events
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1399521467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399521466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca55201633b97d3408f439eb84ecb249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueEntrySceneEvents:
+  - guid: aa21037b-d9bf-447e-b8ee-14aaecf66136
+    onExecute:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1228966663}
+          m_TargetAssemblyTypeName: PixelCrushers.QuestMachine.QuestGiver, Assembly-CSharp-firstpass
+          m_MethodName: GiveAllQuestsToQuester
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!4 &1399521468
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399521466}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1414430994
 GameObject:
@@ -43536,3 +43597,4 @@ SceneRoots:
   - {fileID: 1228966657}
   - {fileID: 783366582}
   - {fileID: 1582973438}
+  - {fileID: 1399521468}
