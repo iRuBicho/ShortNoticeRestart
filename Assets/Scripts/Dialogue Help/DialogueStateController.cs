@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using PixelCrushers.DialogueSystem; 
+using PixelCrushers.DialogueSystem;
 
 public class DialogueStateController : MonoBehaviour
 {
     public FPSController cameraController;
     public QuestInteraction questInteraction;
-   
+
     public Collider lumiaCollider;
     public Canvas dialogueCanvas;
 
@@ -18,9 +18,6 @@ public class DialogueStateController : MonoBehaviour
             {
                 cameraController.enabled = false;
             }
-
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
 
             if (lumiaCollider != null)
             {
@@ -35,9 +32,6 @@ public class DialogueStateController : MonoBehaviour
             {
                 cameraController.enabled = true;
             }
-
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
 
             if (lumiaCollider != null)
             {
@@ -59,7 +53,6 @@ public class DialogueStateController : MonoBehaviour
         else
         {
             Debug.Log("Player does not have the required items.");
-            
         }
     }
 }

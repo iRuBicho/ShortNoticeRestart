@@ -21,23 +21,19 @@ public class FPSController : MonoBehaviour
     float rotationX = 0;
 
     public bool canMove = true;
+    public bool canLook = true; // Add this line
 
-
-    
 
     CharacterController characterController;
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        // Cursor control is now handled by the CursorController script
     }
-    
+
 
     void Update()
     {
-        
-
         #region Handles Movment
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
@@ -69,16 +65,15 @@ public class FPSController : MonoBehaviour
         #endregion
 
         #region Handles Rotation
-        characterController.Move(moveDirection * Time.deltaTime);
+        characterController.Move(moveDirection * Time.deltaTime); // This line should remain
 
-        if (canMove)
+        if (canLook) // Control camera rotation with canLook
         {
             rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
             rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
-
         #endregion
     }
 }
