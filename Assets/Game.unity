@@ -15664,10 +15664,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 413209900}
-    - targetCorrespondingSourceObject: {fileID: 8208792566947488129, guid: eba652cfb3edc0c48a80820dcbac5002,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 413209901}
   m_SourcePrefab: {fileID: 100100000, guid: eba652cfb3edc0c48a80820dcbac5002, type: 3}
 --- !u!4 &413209893 stripped
 Transform:
@@ -15815,21 +15811,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &413209901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413209894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c356fa21c61ed4fa2cde2d9cff0ded, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  promptText: Press F to pick up
-  interactionKey: 102
-  conversationTitle: 
 --- !u!4 &483011176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5154010266989119465, guid: 3a162d9b3eabf5541aeafc613988e630,
@@ -18240,10 +18221,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 796201121}
-    - targetCorrespondingSourceObject: {fileID: 2643009974593295904, guid: 568da040d48fd2349b368ac1caea4005,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 796201120}
   m_SourcePrefab: {fileID: 100100000, guid: 568da040d48fd2349b368ac1caea4005, type: 3}
 --- !u!4 &796201112 stripped
 Transform:
@@ -18342,21 +18319,6 @@ MonoBehaviour:
   m_onTriggerExit:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &796201120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796201113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c356fa21c61ed4fa2cde2d9cff0ded, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  promptText: Press F to Pick up
-  interactionKey: 102
-  conversationTitle: 
 --- !u!114 &796201121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34344,8 +34306,8 @@ GameObject:
   - component: {fileID: 1228966660}
   - component: {fileID: 1228966659}
   - component: {fileID: 1228966658}
-  - component: {fileID: 1228966662}
   - component: {fileID: 1228966663}
+  - component: {fileID: 1228966664}
   m_Layer: 0
   m_Name: 'LumiaTrigger '
   m_TagString: Untagged
@@ -34396,7 +34358,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228966654}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c593457cd8105e148906690e1707c592, type: 3}
   m_Name: 
@@ -34554,21 +34516,6 @@ MonoBehaviour:
     prependActorNameSeparator: ': '
     prependActorNameFormat: '{0}{1}'
     subtitleColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!114 &1228966662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228966654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c356fa21c61ed4fa2cde2d9cff0ded, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  promptText: Press F to Talk
-  interactionKey: 102
-  conversationTitle: 
 --- !u!114 &1228966663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34642,6 +34589,18 @@ MonoBehaviour:
   m_completedQuestDialogueMode: 0
   m_questDialogueUI: {fileID: 0}
   m_cooldownCheckFrequency: 0
+--- !u!114 &1228966664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228966654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905420b3b85a1c04781f526bf047c539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1237077768
 GameObject:
   m_ObjectHideFlags: 0
@@ -35075,23 +35034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca55201633b97d3408f439eb84ecb249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueEntrySceneEvents:
-  - guid: aa21037b-d9bf-447e-b8ee-14aaecf66136
-    onExecute:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1228966663}
-          m_TargetAssemblyTypeName: PixelCrushers.QuestMachine.QuestGiver, Assembly-CSharp-firstpass
-          m_MethodName: GiveAllQuestsToQuester
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  dialogueEntrySceneEvents: []
 --- !u!4 &1399521468
 Transform:
   m_ObjectHideFlags: 0
