@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-5728235583096704320
+--- !u!114 &-7955710025308479760
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14,25 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_alreadyTrue: 0
   m_counterIndex: 1
-  m_counterValueMode: 0
-  m_requiredCounterValue:
-    m_valueType: 0
-    m_literalValue: 1
-    m_counterIndex: 0
---- !u!114 &-3904010005591713676
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a976671aaa12c2e428b2aac89a260302, type: 3}
-  m_Name: CounterQuestCondition
-  m_EditorClassIdentifier: 
-  m_alreadyTrue: 0
-  m_counterIndex: 0
   m_counterValueMode: 0
   m_requiredCounterValue:
     m_valueType: 0
@@ -81,8 +62,9 @@ MonoBehaviour:
   m_rememberIfAbandoned: 0
   m_deleteWhenComplete: 0
   m_autostartConditionSet:
-    m_conditionList: []
-    m_conditionCountMode: 0
+    m_conditionList:
+    - {fileID: 1449547185983513382}
+    m_conditionCountMode: 1
     m_minConditionCount: 0
     m_numTrueConditions: 0
   m_offerConditionSet:
@@ -99,7 +81,7 @@ MonoBehaviour:
   m_cooldownSecondsRemaining: 0
   m_noRepeatIfSuccessful: 0
   m_saveAllIfWaitingToStart: 0
-  m_state: 1
+  m_state: 0
   m_stateInfoList:
   - m_actionList: []
     m_categorizedContentList:
@@ -167,7 +149,7 @@ MonoBehaviour:
       m_textTableFieldID: 0
     m_nodeType: 0
     m_isOptional: 0
-    m_state: 0
+    m_state: 1
     m_speaker:
       m_text: 
       m_stringAsset: {fileID: 0}
@@ -237,16 +219,16 @@ MonoBehaviour:
       - m_contentList: []
     m_conditionSet:
       m_conditionList:
-      - {fileID: -3904010005591713676}
-      - {fileID: -5728235583096704320}
+      - {fileID: 3773798043372593038}
+      - {fileID: -7955710025308479760}
       m_conditionCountMode: 1
       m_minConditionCount: 0
       m_numTrueConditions: 0
     m_childIndexList: 02000000
     m_canvasRect:
       serializedVersion: 2
-      x: 156.00005
-      y: 97.200005
+      x: 162.40002
+      y: 112.4
       width: 120
       height: 48
   - m_id:
@@ -299,6 +281,64 @@ MonoBehaviour:
   m_textTable: {fileID: 0}
   m_goalEntityTypeName: 
   m_nextContentID: 0
+--- !u!114 &1449547185983513382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5682394e55a192147a020b9edf624e51, type: 3}
+  m_Name: MessageQuestCondition
+  m_EditorClassIdentifier: 
+  m_alreadyTrue: 0
+  m_senderSpecifier: 0
+  m_senderID:
+    m_text: 
+    m_stringAsset: {fileID: 0}
+    m_textTable: {fileID: 0}
+    m_textTableFieldID: 0
+  m_targetSpecifier: 0
+  m_targetID:
+    m_text: 
+    m_stringAsset: {fileID: 0}
+    m_textTable: {fileID: 0}
+    m_textTableFieldID: 0
+  m_message:
+    m_text: QUEST_START_TRIGGER
+    m_stringAsset: {fileID: 0}
+    m_textTable: {fileID: 0}
+    m_textTableFieldID: 0
+  m_parameter:
+    m_text: 
+    m_stringAsset: {fileID: 0}
+    m_textTable: {fileID: 0}
+    m_textTableFieldID: 0
+  m_value:
+    m_valueType: 0
+    m_intValue: 0
+    m_stringValue: 
+--- !u!114 &3773798043372593038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a976671aaa12c2e428b2aac89a260302, type: 3}
+  m_Name: CounterQuestCondition
+  m_EditorClassIdentifier: 
+  m_alreadyTrue: 0
+  m_counterIndex: 0
+  m_counterValueMode: 0
+  m_requiredCounterValue:
+    m_valueType: 0
+    m_literalValue: 1
+    m_counterIndex: 0
 --- !u!114 &8874086593967498856
 MonoBehaviour:
   m_ObjectHideFlags: 1
