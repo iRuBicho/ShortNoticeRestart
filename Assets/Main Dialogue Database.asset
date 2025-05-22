@@ -814,8 +814,8 @@ MonoBehaviour:
       conditionsString: 
       userScript: 'SetQuestState("HelpLumia", "success");
 
-        SetQuestNodeState("HelpLumia",
-        "Return", "success")'
+        SendMessageSystem("Return",
+        "success")'
       onExecute:
         m_PersistentCalls:
           m_Calls: []

@@ -19536,7 +19536,7 @@ Transform:
   m_GameObject: {fileID: 606635542}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 79.787796, y: 26.243084, z: 73.99327}
+  m_LocalPosition: {x: 79.787796, y: 26.243084, z: 74.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26639,6 +26639,84 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!108 &1043565441 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 4491464743887697725, guid: 3a162d9b3eabf5541aeafc613988e630,
+    type: 3}
+  m_PrefabInstance: {fileID: 1442504765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1043565442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043565437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d18230d3a29b2a418e94d126c53f276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_questID:
+    m_text: HelpLumia
+    m_stringAsset: {fileID: 0}
+    m_textTable: {fileID: 0}
+    m_textTableFieldID: 0
+  m_questNodeID:
+    m_text: 
+    m_stringAsset: {fileID: 0}
+    m_textTable: {fileID: 0}
+    m_textTableFieldID: 0
+  m_counterName:
+    m_text: 
+    m_stringAsset: {fileID: 0}
+    m_textTable: {fileID: 0}
+    m_textTableFieldID: 0
+  m_conditionalEvent:
+    questID:
+      m_text: HelpLumia
+      m_stringAsset: {fileID: 0}
+      m_textTable: {fileID: 0}
+      m_textTableFieldID: 0
+    requiredQuestState: 2
+    questNodeID:
+      m_text: 
+      m_stringAsset: {fileID: 0}
+      m_textTable: {fileID: 0}
+      m_textTableFieldID: 0
+    requiredQuestNodeState: 1
+    onConditionMet:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1043565443}
+          m_TargetAssemblyTypeName: LightFlicker, Assembly-CSharp
+          m_MethodName: SetFlickering
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1043565443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043565437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c318e8dbbca5a924d9a74750d0b0fc6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flickerLight: {fileID: 1043565441}
+  flickerSpeed: 0.15
+  intensityMin: 10
+  intensityMax: 30
+  flickering: 1
 --- !u!1 &1043618558
 GameObject:
   m_ObjectHideFlags: 0
@@ -39703,8 +39781,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4491464743887697725, guid: 3a162d9b3eabf5541aeafc613988e630,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491464743887697725, guid: 3a162d9b3eabf5541aeafc613988e630,
+        type: 3}
       propertyPath: m_Intensity
-      value: 80
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4491464743887697725, guid: 3a162d9b3eabf5541aeafc613988e630,
         type: 3}
@@ -39803,6 +39886,14 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1043565439}
+    - targetCorrespondingSourceObject: {fileID: 2209340208989007885, guid: 3a162d9b3eabf5541aeafc613988e630,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1043565443}
+    - targetCorrespondingSourceObject: {fileID: 2209340208989007885, guid: 3a162d9b3eabf5541aeafc613988e630,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1043565442}
   m_SourcePrefab: {fileID: 100100000, guid: 3a162d9b3eabf5541aeafc613988e630, type: 3}
 --- !u!4 &1445812503 stripped
 Transform:
