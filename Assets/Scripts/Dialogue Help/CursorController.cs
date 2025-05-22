@@ -1,37 +1,38 @@
 using UnityEngine;
 using PixelCrushers.DialogueSystem;
 
-public class CursorController : MonoBehaviour
+public class DialogueControlManager : MonoBehaviour
 {
+    private ProximitySelector selector;
     private CursorLockMode defaultLockMode = CursorLockMode.Locked;
+    public MonoBehaviour playerController;
 
     void Start()
     {
-        SetCursorVisibility(false);
-        SetCursorLockMode(defaultLockMode);
+        selector = GetComponent<ProximitySelector>();
+        SetCursor(false, defaultLockMode);
     }
 
     void Update()
     {
-        if (DialogueManager.isConversationActive)
+        bool inDialogue = DialogueManager.isConversationActive;
+
+        if (selector != null)
         {
-            SetCursorVisibility(true);
-            SetCursorLockMode(CursorLockMode.None);
+            selector.useDefaultGUI = !inDialogue;
         }
-        else
+
+        SetCursor(inDialogue, inDialogue ? CursorLockMode.None : defaultLockMode);
+
+        if (playerController != null)
         {
-            SetCursorVisibility(false);
-            SetCursorLockMode(defaultLockMode);
+            playerController.enabled = !inDialogue;
         }
     }
 
-    void SetCursorVisibility(bool visible)
+    void SetCursor(bool visible, CursorLockMode lockMode)
     {
         Cursor.visible = visible;
-    }
-
-    void SetCursorLockMode(CursorLockMode lockMode)
-    {
         Cursor.lockState = lockMode;
     }
 }
