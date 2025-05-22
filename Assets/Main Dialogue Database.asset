@@ -796,7 +796,7 @@ MonoBehaviour:
         type: 0
         typeString: 
       - title: Dialogue Text
-        value: Hope this this can fix the lamp
+        value: Hope this can fix the lamp
         type: 0
         typeString: 
       - title: Sequence

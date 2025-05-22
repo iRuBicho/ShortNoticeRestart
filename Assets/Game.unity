@@ -17354,10 +17354,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 413209906}
-    - targetCorrespondingSourceObject: {fileID: 8208792566947488129, guid: eba652cfb3edc0c48a80820dcbac5002,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 413209905}
   m_SourcePrefab: {fileID: 100100000, guid: eba652cfb3edc0c48a80820dcbac5002, type: 3}
 --- !u!4 &413209893 stripped
 Transform:
@@ -17430,7 +17426,19 @@ MonoBehaviour:
         m_Calls: []
     onUse:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 413209906}
+          m_TargetAssemblyTypeName: PixelCrushers.QuestMachine.QuestControl, Assembly-CSharp-firstpass
+          m_MethodName: SendToMessageSystem
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Got:Lamp
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &413209902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17445,39 +17453,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Lamp
   amount: 1
---- !u!114 &413209905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 413209894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79c7719e6566674b8c4d70a6fc32d34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagMask:
-    m_tags:
-    - Player
-  m_onTriggerEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 413209906}
-        m_TargetAssemblyTypeName: PixelCrushers.QuestMachine.QuestControl, Assembly-CSharp-firstpass
-        m_MethodName: SendToMessageSystem
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Got:Lamp
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_onTriggerExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &413209906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20733,10 +20708,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2643009974593295904, guid: 568da040d48fd2349b368ac1caea4005,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 796201125}
-    - targetCorrespondingSourceObject: {fileID: 2643009974593295904, guid: 568da040d48fd2349b368ac1caea4005,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 796201124}
   m_SourcePrefab: {fileID: 100100000, guid: 568da040d48fd2349b368ac1caea4005, type: 3}
 --- !u!4 &796201112 stripped
@@ -20810,7 +20781,19 @@ MonoBehaviour:
         m_Calls: []
     onUse:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 796201124}
+          m_TargetAssemblyTypeName: PixelCrushers.QuestMachine.QuestControl, Assembly-CSharp-firstpass
+          m_MethodName: SendToMessageSystem
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: Got:FlashLight
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &796201121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20868,39 +20851,6 @@ MonoBehaviour:
     onConditionMet:
       m_PersistentCalls:
         m_Calls: []
---- !u!114 &796201125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 796201113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79c7719e6566674b8c4d70a6fc32d34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagMask:
-    m_tags:
-    - Player
-  m_onTriggerEnter:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 796201124}
-        m_TargetAssemblyTypeName: PixelCrushers.QuestMachine.QuestControl, Assembly-CSharp-firstpass
-        m_MethodName: SendToMessageSystem
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: Got:FlashLight
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_onTriggerExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &800809858
 GameObject:
   m_ObjectHideFlags: 0
