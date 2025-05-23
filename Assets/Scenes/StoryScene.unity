@@ -450,7 +450,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.8237305, y: -1.0092773}
+  m_AnchoredPosition: {x: 147, y: -1.0092773}
   m_SizeDelta: {x: -1719.0392, y: -1029.7009}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1461526454
@@ -475,13 +475,13 @@ MonoBehaviour:
       m_Calls: []
   m_text: "It's hard to remember how long we've been here.\nThis world\u2014strange,
     quiet, alive in ways we can't explain.\nAnd then there's Lumia.\nShe found us
-    when we first arrived\u2014glowing eyes, a soft voice, always watching.\nWe don\u2019t
-    know what she is, but she\u2019s never led us astray.\nNow she\u2019s moving
-    again, further into the unknown.\nSomething tells us we need to follow her.\nAnswers
-    lie ahead. Or maybe something else"
+    when we first arrived. A glowing sphere, warm light pulsing like breath, always
+    near.\nWe don\u2019t know what she is, but she\u2019s never led us astray.\nNow
+    she\u2019s moving again, further into the unknown.\nSomething tells us we need
+    to follow her.\nAnswers lie ahead. Or maybe something else..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -500,20 +500,20 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 93368250
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 5
-  m_fontSizeBase: 5
+  m_fontSize: 4.5
+  m_fontSizeBase: 4.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 2
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -541,7 +541,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -19.045105, y: -0.07095909, z: 0.5787964, w: 0}
+  m_margin: {x: -15.792183, y: -0.07095909, z: 15.969589, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
