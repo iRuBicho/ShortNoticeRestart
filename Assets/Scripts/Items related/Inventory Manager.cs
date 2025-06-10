@@ -11,6 +11,8 @@ public class InventoryManager : MonoBehaviour // Youtube:https://www.youtube.com
 
     private List<ItemSlot> itemSlots = new List<ItemSlot>();
     private bool menuOpen = false;
+    private Dictionary<string, ItemSlot> activeItems = new Dictionary<string, ItemSlot>();
+
 
     void Start()
     {
@@ -43,15 +45,29 @@ public class InventoryManager : MonoBehaviour // Youtube:https://www.youtube.com
         }
     }
 
-    public void AddItem(Sprite icon)
+    public void AddItem(string itemName, Sprite icon)
     {
         foreach (ItemSlot slot in itemSlots)
         {
             if (slot.IsEmpty())
             {
                 slot.SetItem(icon);
+                slot.iconImage.name = itemName; 
+                activeItems[itemName] = slot;
                 return;
             }
         }
     }
+
+    public void RemoveItemByName(string itemName)
+    {
+        if (activeItems.TryGetValue(itemName, out ItemSlot slot))
+        {
+            slot.ClearItem();
+            activeItems.Remove(itemName);
+        }
+    }
+
+
+
 }
