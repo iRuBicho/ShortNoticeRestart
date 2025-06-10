@@ -4,22 +4,22 @@ using UnityEngine.UI;
 
 public class InventorySystem : MonoBehaviour
 {
-    public List<Image> itemSlots = new List<Image>();
-    public Sprite emptySlotSprite;
+    public List<Image> itemIcons = new List<Image>();
 
     void Start()
     {
-        if (itemSlots.Count == 0)
+        if (itemIcons.Count == 0)
         {
-            Transform slotParent = transform.Find("Inventory Slots");
-            if (slotParent != null)
+            foreach (Transform slot in transform)
             {
-                foreach (Transform child in slotParent)
+                Transform icon = slot.Find("Icon");
+                if (icon != null)
                 {
-                    Image img = child.GetComponent<Image>();
+                    Image img = icon.GetComponent<Image>();
                     if (img != null)
                     {
-                        itemSlots.Add(img);
+                        itemIcons.Add(img);
+                        img.color = new Color(1, 1, 1, 0); // make transparent
                     }
                 }
             }
@@ -28,15 +28,13 @@ public class InventorySystem : MonoBehaviour
 
     public void AddItem(string itemName, Sprite itemIcon)
     {
-        for (int i = 0; i < itemSlots.Count; i++)
+        for (int i = 0; i < itemIcons.Count; i++)
         {
-            if (itemSlots[i].name == itemName)
-                return;
-
-            if (itemSlots[i].sprite == emptySlotSprite)
+            if (itemIcons[i].sprite == null)
             {
-                itemSlots[i].sprite = itemIcon;
-                itemSlots[i].name = itemName;
+                itemIcons[i].sprite = itemIcon;
+                itemIcons[i].color = new Color(1, 1, 1, 1); // make visible
+                itemIcons[i].gameObject.name = itemName;
                 return;
             }
         }
@@ -44,12 +42,13 @@ public class InventorySystem : MonoBehaviour
 
     public void RemoveItem(string itemName)
     {
-        for (int i = 0; i < itemSlots.Count; i++)
+        for (int i = 0; i < itemIcons.Count; i++)
         {
-            if (itemSlots[i].name == itemName)
+            if (itemIcons[i].gameObject.name == itemName)
             {
-                itemSlots[i].sprite = emptySlotSprite;
-                itemSlots[i].name = "Empty";
+                itemIcons[i].sprite = null;
+                itemIcons[i].color = new Color(1, 1, 1, 0); // make invisible
+                itemIcons[i].gameObject.name = "Icon";
                 return;
             }
         }
