@@ -1,65 +1,57 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : MonoBehaviour // Youtube:https://www.youtube.com/watch?v=0wKB_rxtqh4&list=PLSR2vNOypvs6eIxvTu-rYjw2Eyw57nZrU
 {
-    public GameObject InventoryMenu;
-    private bool menuActivated;
+    public GameObject inventoryMenu;
+    public Transform slotParent;
+    public MonoBehaviour playerMovement;
+    public MonoBehaviour cameraLook;
+
+    private List<ItemSlot> itemSlots = new List<ItemSlot>();
+    private bool menuOpen = false;
+
+    void Start()
+    {
+        foreach (Transform child in slotParent)
+        {
+            ItemSlot slot = child.GetComponent<ItemSlot>();
+            if (slot != null)
+            {
+                itemSlots.Add(slot);
+            }
+        }
+
+        inventoryMenu.SetActive(false);
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
     void Update()
     {
         if (Input.GetButtonDown("Inventory"))
         {
-            menuActivated = !menuActivated;
-            InventoryMenu.SetActive(menuActivated);
+            menuOpen = !menuOpen;
+            inventoryMenu.SetActive(menuOpen);
 
-            if (menuActivated)
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                DisablePlayerControl();
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-                EnablePlayerControl();
-            }
+            Cursor.visible = menuOpen;
+            Cursor.lockState = menuOpen ? CursorLockMode.None : CursorLockMode.Locked;
+
+            if (playerMovement != null) playerMovement.enabled = !menuOpen;
+            if (cameraLook != null) cameraLook.enabled = !menuOpen;
         }
     }
 
-    void DisablePlayerControl()
+    public void AddItem(Sprite icon)
     {
-        GameObject player = GameObject.FindWithTag("Player");
-        if (player != null)
+        foreach (ItemSlot slot in itemSlots)
         {
-            foreach (MonoBehaviour script in player.GetComponents<MonoBehaviour>())
-                script.enabled = false;
-        }
-
-        Camera cam = Camera.main;
-        if (cam != null)
-        {
-            foreach (MonoBehaviour script in cam.GetComponents<MonoBehaviour>())
-                script.enabled = false;
-        }
-    }
-
-    void EnablePlayerControl()
-    {
-        GameObject player = GameObject.FindWithTag("Player");
-        if (player != null)
-        {
-            foreach (MonoBehaviour script in player.GetComponents<MonoBehaviour>())
-                script.enabled = true;
-        }
-
-        Camera cam = Camera.main;
-        if (cam != null)
-        {
-            foreach (MonoBehaviour script in cam.GetComponents<MonoBehaviour>())
-                script.enabled = true;
+            if (slot.IsEmpty())
+            {
+                slot.SetItem(icon);
+                return;
+            }
         }
     }
 }
