@@ -1,6 +1,6 @@
 using UnityEngine;
 using PixelCrushers.QuestMachine;
-
+//https://www.youtube.com/watch?v=4Q4BFykWOPY&t=25s
 public class LightFlicker : MonoBehaviour
 {
     public Light flickerLight;

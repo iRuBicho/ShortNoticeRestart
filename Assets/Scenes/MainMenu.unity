@@ -682,9 +682,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 079df0609381f5b4c85e2041ab773adf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a53819cc521b1f24689b00c663d8fbb4, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.818
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -782,9 +782,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundMusic: {fileID: 745620635}
   sfx: {fileID: 745620637}
-  playSFX: {fileID: 8300000, guid: 1e65e89e980c6584399b20abc9ba5e24, type: 3}
-  optionsSFX: {fileID: 8300000, guid: 3f94d7906b3801c4394415a2be4657c0, type: 3}
-  quitSFX: {fileID: 8300000, guid: 67ece4a792c2f404181e690b6a04ac70, type: 3}
+  playSFX: {fileID: 8300000, guid: 54d92a4271a65af49ae136e0448e1116, type: 3}
+  optionsSFX: {fileID: 8300000, guid: 54d92a4271a65af49ae136e0448e1116, type: 3}
+  quitSFX: {fileID: 8300000, guid: 54d92a4271a65af49ae136e0448e1116, type: 3}
 --- !u!82 &745620637
 AudioSource:
   m_ObjectHideFlags: 0
@@ -797,7 +797,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.848
   m_Pitch: 1
   Loop: 0
   Mute: 0
