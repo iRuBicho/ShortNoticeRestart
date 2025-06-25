@@ -5,22 +5,27 @@ using UnityEngine;
 
 public class LumiaMovementStop : MonoBehaviour
 {
-    public SplineFollower splineFollow;  // Reference to the SplineFollow script
-    public Transform stopPoint;        
-    public float stopDistance = 1f;    
+    public SplineFollower splineFollow;
+    public Transform stopPoint;
+    public float stopDistance = 1f;
 
     public bool hasStopped = false;
 
+    public CompanionFollowNavMesh sideFollower;
+
+
+
     void Update()
     {
-        
         if (Vector3.Distance(splineFollow.transform.position, stopPoint.position) < stopDistance && !hasStopped)
         {
-           
-            splineFollow.enabled = false;  // Disables the movement of Lumia along the spline
-
+            splineFollow.enabled = false;
             hasStopped = true;
-            Debug.Log("Lumia has stopped moving. You can now interact with her.");
+            if (sideFollower != null)
+            {
+                sideFollower.enabled = true;
+            }
+            Debug.Log("Lumia has stopped moving. Side follow activated.");
         }
     }
 }
