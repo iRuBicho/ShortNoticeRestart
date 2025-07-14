@@ -5,7 +5,7 @@ public class CompanionFollowNavMesh : MonoBehaviour
 {
     public Transform player;
     public NavMeshAgent agent;
-    public Vector3 offset = new Vector3(-3f, 0f, -6f);
+    public Vector3 offset = new Vector3(2f, 0f, -1.5f);
     public float updateRate = 0.25f;
 
     private float timer = 0f;
